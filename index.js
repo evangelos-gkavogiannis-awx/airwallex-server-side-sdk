@@ -24,6 +24,7 @@ async function main() {
         const response = await client.issuing.cards.getCards({ card_status: 'ACTIVE' });
         const PaResponse = await client.paymentAcceptance.paymentIntents.createPaymentIntent(paymentIntentRequest);
         const PaResponse2 = await client.payouts.transfers
+        const accountResponse = await client.coreResources.globalAccount.getGlobalAccounts
         console.log('Global accounts:', response);
         console.log(PaResponse)
     } catch (err) {
